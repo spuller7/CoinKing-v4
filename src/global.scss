@@ -3,10 +3,69 @@
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
 @import "~@ionic/angular/css/colors.css";
-
 @import "~@ionic/angular/css/padding.css";
 @import "~@ionic/angular/css/float-elements.css";
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+.scroll-content {
+    padding: 0 !important;
+}
+
+.item-inner {
+  padding-right: 16px;
+}
+
+ion-item {
+  padding-right: 8px;
+}
+
+input, ion-datetime {
+  color: var(--ion-color-lighttxt);
+}
+
+a {
+  color: inherit;
+}
+
+.short {
+  height: 45px;
+}
+
+ion-item {
+  background-color: var(--ion-color-darkgrey) !important;
+}
+
+.radio-checked {
+  border-color: var(--ion-color-green) !important;
+}
+
+.radio-inner {
+  border-color: var(--ion-color-green) !important;
+  
+}
+
+.radio-md .radio-inner {
+  background-color: var(--ion-color-green) !important;
+}
+
+.item-radio-checked ion-label {
+  color: var(--ion-color-green) !important;
+}
+
+ion-title {
+  padding-right: 0px !important ;
+}
+
+#logo {
+  width: 120px;
+}
+
+#red {
+  background-color: var(--ion-color-red);
+}
+
+#green {
+  background-color: var(--ion-color-green);
+}

@@ -1,1 +1,208 @@
+.select {
+    max-width: 100%;
+}
 
+.select-icon {
+    width: 14px !important;
+}
+  
+.infoLabel {
+    color: #E3E3E3;
+    display: block;
+}
+  
+#watchlist-settings {
+    padding-right: 13px;
+}
+  
+#watchlist-header {
+    padding-left: 13px;
+}
+
+.infoLabel ion-select {
+    padding: 0px !important;
+}
+
+#editWatchlistIcon {
+    margin: 13px 10px 10px 0;
+    display: block;
+    float: right; max-width: 10%;
+}
+
+.item-wrapper {
+    margin-bottom: 2px;
+}
+
+#accountValue {
+    text-align: center;
+    color: #E3E3E3;
+    font-size: 24px;
+    padding: 3% 0 2% 0;
+}
+
+.item-block {
+    min-height : 2em;
+}
+
+.item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    box-shadow : none;
+}
+
+#accountValueDetails {
+    text-align: center;
+    color: #E3E3E3;
+    font-size: 16px;
+}
+
+#dateRange button {
+    font-size: 16px;
+    background-color: transparent;
+    color: #E3E3E3;
+    padding: 8px 4% 0 4%;
+}
+
+.selected{
+    text-decoration: underline;
+    color: #00A10C !important;
+    font-weight: bold;
+}
+
+.list ion-item-options {
+    border-bottom: 0px;
+}
+
+.list
+{
+    margin-bottom: 0px !important;
+}
+
+.add-button
+{
+text-align: center;
+font-size: 30px;
+background: none !important;
+color: rgba(255, 255, 255, 0.4);
+border-bottom: none !important;
+}
+
+.no-coins-guide
+{
+text-align: center;
+font-size: 16px;
+background: none !important;
+padding: 0px 25px;
+color: #444444 !important;
+}
+
+.no-coins-guide ion-note {
+    text-align: center;
+}
+
+#watchlist ion-item-group ion-item, .coinbtn {
+    background: #414141 !important;
+    margin-bottom: 2px;
+    color: #E3E3E3 !important;
+}
+
+#watchlist .item-inner
+{
+    border-bottom: none !important;
+}
+
+.popover-arrow::after, .popover-content ion-item {
+    background-color: #4E4E4E !important;
+    border-bottom: none !important;
+}
+
+.item-wrapper .button
+{
+    margin: 0px !important;
+    background-color: #383838 !important;
+}
+
+.button-inner .icon
+{
+    width: 30px;
+}
+
+.size {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.label {
+    color: #E3E3E3; 
+}
+
+#watchlistCoinInfo div {
+    float: right;
+}
+
+#menuTop
+{
+    background-color: #707070;
+    background-image: -webkit-linear-gradient(35deg, #707070 55%, #616161 35%);
+    height: 17%;
+}
+
+#menuName
+{
+    padding-top: 5%;
+    font-size: 18px;
+    color: #E3E3E3;
+    padding-left: 16px;
+}
+
+#menuPortfolioValue
+{
+    width:55%;
+    padding-top: 2%;
+    font-size: 18px;
+    color: #E3E3E3;
+    padding-left: 16px;
+    float: left;
+}
+
+#menuTotalInvested
+{
+    padding-top: 2%;
+    font-size: 18px;
+    color: #E3E3E3;
+    padding-left: 16px;
+}
+
+.money{
+    font-size: 22px;
+}
+
+.selectedMenuItem
+{
+    background-color: #414141;
+}
+
+.mainBackground{
+    height: 25%;
+    background-color: #00A10C;
+    background-image: -webkit-linear-gradient(35deg, #00A10C 85%, #00930b 35%);
+}
+
+.graphContainer
+{
+    background-color: #414141;
+    background-image: -webkit-linear-gradient(35deg, #444444 55%, #414141 35%);
+    margin: -65px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.no-scroll .scroll-content{
+    overflow: hidden;
+}
+
+#ctx, #portfolioChart {
+    width: 100% !important;
+    height: 155px !important;
+}  
+
+.add-button div {
+    margin: 0 auto;
+}

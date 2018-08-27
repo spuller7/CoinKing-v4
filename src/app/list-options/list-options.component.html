@@ -1,0 +1,30 @@
+<div>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="list_value">
+      <ion-item >
+        <ion-label>Last Price</ion-label>
+        <ion-radio (ionSelect)='changeWatchlistItem("Last Price")' value="Last Price"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Equity</ion-label>
+        <ion-radio (ionSelect)='changeWatchlistItem("Equity")' value="Equity"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Holdings</ion-label>
+        <ion-radio (ionSelect)='changeWatchlistItem("Holdings")' value="Holdings"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>24h Percent Change</ion-label>
+        <ion-radio (ionSelect)='changeWatchlistItem("24h Percent Change")' value="24h Percent Change"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Total Gain/Loss</ion-label>
+        <ion-radio (ionSelect)='changeWatchlistItem("Total Gain/Loss")' value="Total Gain/Loss"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Total Percent Change</ion-label>
+        <ion-radio (ionSelect)='changeWatchlistItem("Total Percent Change")' value="Total Percent Change"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</div>

@@ -1,12 +1,113 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-menu-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-menu-button>
+      </ion-menu-toggle>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      <img width="40%" style="float:right; width: 120px" src="assets/CoinKingLogo.svg" id="logo" />
     </ion-title>
+    
   </ion-toolbar>
+  <div id="dateRange" style="height: 30px; text-align: center;"><button class="oneHour" (click)='onOneHour();'>1h</button><button class="oneDay selected" (click)='onOneDay();'>1d</button><button class="oneWeek" (click)='onOneWeek();'>1w</button><button class="oneMonth" (click)='onOneMonth();'>1m</button><button class="threeMonths" (click)='onThreeMonths();'>3m</button><button class="oneYear" (click)='onOneYear();'>1y</button><button class="fiveYears" (click)='onFiveYears();'>5y</button></div>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+<ion-content>
+  <div class="mainBackground">
+    <div id="accountValue">{{_data.currencySign}}00.00</div>
+
+    <div id="accountValueDetails" *ngIf="portfolioData.change; else getting_data">{{portfolioData.change >= 0 ? "+" : ""}}{{portfolioData.change | currency: _data.currencySign}} ({{portfolioData.change >= 0 ? "+" : ""}}{{portfolioData.percentChange | number:'1.2-2'}}%) {{portfolioData.chartDescriptor}}</div>
+    <ng-template #getting_data><div *ngIf="noData == false; else noDataDisplay" id="accountValueDetails">Loading Data...</div></ng-template>
+    <ng-template #noDataDisplay><div id="accountValueDetails">No Data to Display</div></ng-template>
+  </div>
+  <div class="graphContainer">
+    <canvas id="portfolioChart"></canvas>
+  </div>
+  <ion-grid id="watchlist-actions">
+    <ion-row>
+      <ion-col col-6 id="watchlist-header">
+        <span class="infoLabel"><a (click)="showWatchlistConfiguration()">Watchlist</a></span>
+      </ion-col>
+      <ion-col col-6 id="watchlist-settings">
+          <span class="infoLabel" style="float:right; background: none; color: #ffffff  ; max-width: 100%">
+            <a (click)="presentPopover($event)">{{_listData.viewer}}</a>
+          </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="storedCoins; else addToWatchlist" id="watchlist">
+    <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+    <ion-item-sliding *ngFor="let coin of storedCoins.Coins let i = index">
+      <ion-item (click)="coinDetails(coin.symbol, coin.name, coin.ccID, coin.holdings)" no-lines>
+        <ion-grid no-padding style="margin: 0; width: 100%">
+          <ion-row>
+            <ion-col size="1">
+              <img style="float:left; width:18px;" class="coinIcon" src="{{coin.imageURL}}" />
+            </ion-col>
+            <ion-col size="2">
+              {{coin.symbol}}
+            </ion-col>
+            <ion-col size="5">
+              <div style="height:20px;">
+                <canvas style="height: 100%; width: 100%" id="{{coin.symbol}}graph">{{watchlistCharts[coin.symbol]}}</canvas>
+              </div>
+            </ion-col>
+            <ion-col size="4" id="watchlistCoinInfo">
+              <div>
+              <div *ngIf="_listData.viewer == 'Last Price'" item-end color="lighttxt">
+                {{coin.price | currency:_data.currencySign:true}}
+              </div>
+              <div *ngIf="_listData.viewer == 'Equity'" item-end color="lighttxt">
+                {{coin.equity | currency:_data.currencySign:true}}
+              </div>
+              <div *ngIf="_listData.viewer == 'Holdings'" item-end color="lighttxt">
+                {{coin.holdings | number:'0.2-2'}}
+              </div>
+              <div *ngIf="_listData.viewer == '24h Percent Change'" item-end color="lighttxt">
+                {{coin.percent | number:'0.2-2'}}%
+              </div>
+              <div *ngIf="_listData.viewer == 'Total Gain/Loss'" item-end color="lighttxt">
+                {{coin.totalGainLoss | currency:_data.currencySign:true}}
+              </div>
+              <div *ngIf="_listData.viewer == 'Total Percent Change'" item-end color="lighttxt">
+                {{coin.totalPercentGainLoss | percent:'2.2'}}
+              </div>
+            </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button (click)="removeCoin(coin.symbol)">
+          <ion-icon name="close" class="size"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    </ion-item-group>
+    <ion-item class="add-button">
+      <a (click)="showWatchlistConfiguration()" style="margin: auto; margin-top: 10px">
+      <ion-icon name="add-circle" color="dark"></ion-icon>
+      </a>
+    </ion-item>
+  </ion-list>
+  <ng-template #addToWatchlist>
+    <ion-list>
+      <ion-item no-lines class="no-coins-guide" text-wrap>
+        <ion-note color="dark">
+          Add Coins to your Watchlist to Begin Building your Portfolio
+        </ion-note>
+      </ion-item>
+      <ion-item class="add-button">
+        <div>
+          <a (click)="showWatchlistConfiguration()" style="margin: auto; margin-top: 5px">
+            <ion-icon name="add-circle" color="dark"></ion-icon>
+          </a>
+      </div>
+      </ion-item>
+    </ion-list>
+  </ng-template>
 </ion-content>

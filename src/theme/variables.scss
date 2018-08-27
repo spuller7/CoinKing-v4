@@ -1,10 +1,17 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+:root {
+  --ion-toolbar-background-color: #1C1C1C;
+  --ion-background-color: #0F0F0F;
+  --inner-padding-right: 16px;
+  --inner-padding-end : 16px;
+}
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #488aff;
+  --ion-color-primary: #00A10C;;
   --ion-color-primary-rgb: 72,138,255;
   --ion-color-primary-contrast: #fff;
   --ion-color-primary-contrast-rgb: 255,255,255;
@@ -68,10 +75,26 @@
   --ion-color-medium-tint: #a2a4ab;
   
   /** dark **/
-  --ion-color-dark: #222;
+  --ion-color-dark: #444;
   --ion-color-dark-rgb: 34,34,34;
   --ion-color-dark-contrast: #fff;
   --ion-color-dark-contrast-rgb: 255,255,255;
   --ion-color-dark-shade: #1e1e1e;
   --ion-color-dark-tint: #383838;
+
+  /** lighttxt **/
+  --ion-color-lighttxt: #E3E3E3;
+
+  /** green **/
+  --ion-color-green: #00A10C;
+  --ion-color-base: #00A10C;
+
+  /** red **/
+  --ion-color-red: #F2493B;
+
+  /** grey **/
+  --ion-color-grey: #444444;
+
+  /** dark grey **/
+  --ion-color-darkgrey: #414141;
 }

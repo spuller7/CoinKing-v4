@@ -1,3 +1,24 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-menu contentId="content">
+
+  <!-- color data for js charts -->
+  <div id="red" style="display:none"></div>
+  <div id="green" style="display:none"></div>
+  <!-- ________________________ -->
+
+  <ion-content class="no-scroll">
+    <div id="menuTop">
+      <div id="menuName">Your Portfolio</div>
+      <span><div id="menuPortfolioValue"><div id="menuPortfolioValueAmount" class="money">$00.00</div><div>Portfolio Value</div></div></span>
+      <span><div id="menuTotalInvested"><div id="menuTotalInvestedAmount" class="money">$00.00</div><div>Total Invested</div></div></span>
+    </div>
+
+    <ion-list id="sideMenu" no-lines>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-router-outlet id="content"></ion-router-outlet>
